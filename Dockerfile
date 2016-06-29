@@ -16,8 +16,8 @@ RUN apk --no-cache add \
 
 ENV PAGER=“less”
 
-# Expose volume for adding credentials
-#RUN mkdir ~/.aws
+# Expose credentials volume
+RUN mkdir ~/.aws
 #VOLUME ["~/.aws"]
 
 # Don't use an entrypoint or cmd at this time. This is intended to be used as a container in workflow steps
