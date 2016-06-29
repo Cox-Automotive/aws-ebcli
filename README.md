@@ -6,7 +6,7 @@ A container for running AWS CLI and AWS EB CLI tools.
 
 ## Running - in a CLI
 
-To run the cli tools, use the cli command just like you normally would.  The combination of -w and -v mounts your PWD into the container as the current working directory for the eb cli.
+To run the CLI tools, use the CLI command just like you normally would.  The combination of -w and -v mounts your PWD into the container as the current working directory for the EB CLI. If youre on Windows you'll want to use *%cd%* instead of *$PWD*.
 
 	docker run -i -w /work -v $PWD:/work coxauto/aws-ebcli eb --version
 	
@@ -37,6 +37,6 @@ Use in a Jenkinsfile with docker workflow plugin:
 
 ```
 docker.image('coxauto/aws-ebcli').inside('-u root:root') {
-          sh 'eb create test-app-${BUILD_NUMBER}'
-      }
+    sh 'eb create test-app-${BUILD_NUMBER}'
+}
 ```
