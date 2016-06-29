@@ -1,8 +1,8 @@
 # AWS CLI and AWS EB CLI tools
 
-[`kulinski/awseb-cli`](https://hub.docker.com/r/kulinski/awseb-cli/)
+[`coxauto/awseb-cli`](https://hub.docker.com/r/coxauto/awseb-cli/)
 
-A container for running AWS aws CLI and AWS eb CLI tools
+A container for running AWS CLI and AWS EB CLI.
 
 ## Running - in a CLI
 
