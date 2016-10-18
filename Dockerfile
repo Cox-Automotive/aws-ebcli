@@ -23,3 +23,4 @@ RUN mkdir ~/.aws
 # Don't use an entrypoint or cmd at this time. This is intended to be used as a container in workflow steps
 #ENTRYPOINT ["/usr/bin/eb"]
 #CMD ["--version"]
+# Trigger build, kthxbye. :)
