@@ -2,11 +2,11 @@
 
 Location on Docker Hub [`coxauto/aws-ebcli`](https://hub.docker.com/r/coxauto/aws-ebcli/)
 
-A container for running AWS CLI and AWS EB CLI tools.
+A container for running AWS CLI, AWS EB CLI and CLI53.
 
 ## Running - in a CLI
 
-To run the CLI tools, use the CLI command just like you normally would.  The combination of -w and -v mounts your PWD into the container as the current working directory for the EB CLI. If youre on Windows you'll want to use *%cd%* instead of *$PWD*.
+To run the CLI tools, use the CLI command just like you normally would.  The combination of -w and -v mounts your PWD into the container as the current working directory for the EB CLI. If you're on Windows you'll want to use *%cd%* instead of *$PWD*.
 
 	docker run -i -w /work -v $PWD:/work coxauto/aws-ebcli eb --version
 	
