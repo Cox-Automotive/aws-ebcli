@@ -2,18 +2,19 @@
 
 Location on Docker Hub [`coxauto/aws-ebcli`](https://hub.docker.com/r/coxauto/aws-ebcli/)
 
-A container for running AWS CLI, AWS EB CLI and CLI53.
+A container for running:
+- AWS CLI
+- AWS EB CLI
+- CLI53
+- Credstash
 
 ## Running - in a CLI
 
 To run the CLI tools, use the CLI command just like you normally would.  The combination of -w and -v mounts your PWD into the container as the current working directory for the EB CLI. If you're on Windows you'll want to use *%cd%* instead of *$PWD*.
 
 	docker run -i -w /work -v $PWD:/work coxauto/aws-ebcli eb --version
-	
 	docker run -i coxauto/aws-ebcli aws --version
-
-	docker run -i -w /work -v $PWD:/work coxauto/aws-ebcli eb create test-app-${BUILD_NUMBER} 
-	
+	docker run -i -w /work -v $PWD:/work coxauto/aws-ebcli eb create test-app-${BUILD_NUMBER}
 	docker run -i coxauto/aws-ebcli aws ec2 describe-instances --region=us-east-1
 
 To provide credentials, you have 2 options:
@@ -24,7 +25,6 @@ To provide credentials, you have 2 options:
 Example with -e
 
 	docker run -i -w /work -v $PWD:/work -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY -e AWS_SESSION_TOKEN=$AWS_SESSION_TOKEN coxauto/aws-ebcli eb status
-	
 	docker run -i -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY -e AWS_SESSION_TOKEN=$AWS_SESSION_TOKEN coxauto/aws-ebcli aws ec2 describe-instances --region=us-east-1
 
 Example with mounting ~/.aws
