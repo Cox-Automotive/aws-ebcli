@@ -6,7 +6,6 @@ A container for running:
 - AWS CLI
 - AWS EB CLI
 - CLI53
-- Credstash
 
 ## Running - in a CLI
 
