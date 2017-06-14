@@ -11,7 +11,13 @@ RUN apk --no-cache add \
         curl \
         python \
         py-pip \
-    pip install --upgrade pip \
+        gcc \
+        python-dev \
+        musl-dev \
+        libffi-dev \
+        openssl-dev
+
+RUN pip install --upgrade pip \
         awsebcli \
         awscli \
         credstash
