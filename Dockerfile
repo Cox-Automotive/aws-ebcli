@@ -1,6 +1,5 @@
 # Docker file to run AWS EB CLI tools.
 FROM alpine
-MAINTAINER Antonelli, Kulinski
 
 RUN apk --no-cache add \
         bash \
@@ -10,11 +9,11 @@ RUN apk --no-cache add \
         git \
         curl \
         python \
-        py-pip \
-    pip install --upgrade pip \
+        py-pip
+
+RUN pip install --upgrade pip \
         awsebcli \
-        awscli \
-        credstash
+        awscli
 
 RUN curl -L https://github.com/barnybug/cli53/releases/download/0.8.7/cli53-linux-386 > /usr/bin/cli53 && \
     chmod +x /usr/bin/cli53
