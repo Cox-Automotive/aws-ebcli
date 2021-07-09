@@ -8,17 +8,17 @@ RUN apk --no-cache --update add \
         jq \
         git \
         curl \
-        python \
-        py-pip
+        python3 \
+        py3-pip
 
-RUN pip install --upgrade pip \
+RUN pip3 install --upgrade pip \
         awsebcli \
         awscli
 
 RUN curl -L https://github.com/barnybug/cli53/releases/download/0.8.18/cli53-linux-386 > /usr/bin/cli53 && \
-    chmod +x /usr/bin/cli53
+        chmod +x /usr/bin/cli53
 
 ENV PAGER="less"
 
-# Expose credentials volume
+# Expose credentials volumeˇ
 RUN mkdir ~/.aws
