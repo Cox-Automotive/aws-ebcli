@@ -16,11 +16,12 @@ RUN apk --no-cache --update add \
         openssl-dev \
         cargo \
         make \
+        cmake \
         py3-pip
 
 RUN pip3 install --upgrade pip \
         setuptools_rust \
-        awsebcli --ignore-installed \
+        awsebcli --ignore-installed --no-use-pep517 \
         awscli
 
 RUN curl -L https://github.com/barnybug/cli53/releases/download/0.8.18/cli53-linux-386 > /usr/bin/cli53 && \
