@@ -8,11 +8,19 @@ RUN apk --no-cache --update add \
         jq \
         git \
         curl \
-        python3 \
+        gcc \
+        musl-dev \
+        python3-dev \
+        libc-dev \
+        libffi-dev \
+        openssl-dev \
+        cargo \
+        make \
         py3-pip
 
 RUN pip3 install --upgrade pip \
-        awsebcli \
+        setuptools_rust \
+        awsebcli --ignore-installed \
         awscli
 
 RUN curl -L https://github.com/barnybug/cli53/releases/download/0.8.18/cli53-linux-386 > /usr/bin/cli53 && \
